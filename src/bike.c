@@ -1081,3 +1081,19 @@ bool32 IsRunningDisallowed(u8 metatile)
 
     return FALSE;
 }
+
+void SwapBike(void)
+{    
+    PlaySE(SE_BIKE_BELL);
+    if (gPlayerAvatar.flags & PLAYER_AVATAR_FLAG_ACRO_BIKE)
+    {                
+        SetPlayerAvatarTransitionFlags(PLAYER_AVATAR_FLAG_MACH_BIKE);
+        BikeClearState(0,0);
+    }
+    else
+    {        
+        SetPlayerAvatarTransitionFlags(PLAYER_AVATAR_FLAG_ACRO_BIKE);
+        BikeClearState(0,0);
+    }
+    return;
+}
