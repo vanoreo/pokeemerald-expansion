@@ -232,7 +232,7 @@ int ProcessPlayerFieldInput(struct FieldInput *input)
     if (input->pressedSelectButton && UseRegisteredKeyItemOnField() == TRUE)
         return TRUE;
     
-    if (input->pressedRButton && (gPlayerAvatar.flags & PLAYER_AVATAR_FLAG_BIKE))
+    if (input->pressedRButton && (gPlayerAvatar.flags & PLAYER_AVATAR_FLAG_BIKE) && BICYCLE_IS_BOTH_BIKES)
     {
         SwapBike();
     }

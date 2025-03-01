@@ -1088,11 +1088,13 @@ void SwapBike(void)
     if (gPlayerAvatar.flags & PLAYER_AVATAR_FLAG_ACRO_BIKE)
     {                
         SetPlayerAvatarTransitionFlags(PLAYER_AVATAR_FLAG_MACH_BIKE);
+        SetPlayerAvatarStateMask(PLAYER_AVATAR_FLAG_MACH_BIKE);
         BikeClearState(0,0);
     }
     else
     {        
         SetPlayerAvatarTransitionFlags(PLAYER_AVATAR_FLAG_ACRO_BIKE);
+        SetPlayerAvatarStateMask(PLAYER_AVATAR_FLAG_ACRO_BIKE);
         BikeClearState(0,0);
     }
     return;

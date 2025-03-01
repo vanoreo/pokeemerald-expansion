@@ -12166,7 +12166,11 @@ const struct Item gItemsInfo[] =
         .importance = 1,
         .pocket = POCKET_KEY_ITEMS,
         .type = ITEM_USE_FIELD,
+        #if BICYCLE_IS_BOTH_BIKES == TRUE
         .fieldUseFunc = ItemUseOutOfBattle_Bike,
+        #else
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        #endif
         .iconPic = gItemIcon_Bicycle,
         .iconPalette = gItemIconPalette_Bicycle,
     },
